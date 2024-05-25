@@ -1,0 +1,632 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0f1b4c;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Common */
+a {
+  text-decoration: none;
+}
+
+.content {
+  width: 1110px;
+  max-width: calc(100% - 48px); /* 24px for each side of webPage */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 98px;
+  padding: 18px 16px;
+  border-radius: 12px;
+  background: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  /* Khi var ko dc khai báo thì default value = 2 */
+  -webkit-line-clamp: var(--line-clamp, 2);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* ========== Header ========== */
+.header {
+  position: relative;
+  background: #e6f0ff;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding-top: 38px;
+}
+
+.navbar ul {
+  display: flex;
+  margin-left: 50px;
+}
+
+.navbar .actions {
+  margin-left: auto;
+}
+
+.navbar ul a {
+  color: #4f5361;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 8px 14px;
+}
+
+.navbar ul a:hover {
+  text-decoration: underline;
+}
+
+.navbar .action-link {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.navbar .action-btn {
+  padding: 13px 16px;
+  margin-left: 18px;
+  border-radius: 8px;
+}
+
+.hero {
+  margin-top: 130px;
+}
+
+.hero .info {
+  width: 51%; /* (559px / 1110px) * 100% */
+}
+
+.hero .sub-title {
+  color: #687690;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em; /* responsive depends on the font-size */
+}
+
+.hero .title {
+  margin-top: 8px;
+  color: #000336;
+  font-size: 6.4rem;
+  font-weight: 700;
+  line-height: 1.19; /* (76px / 6.4rem) * 100% or 119% */
+}
+
+.hero .desc {
+  margin-top: 30px;
+  color: #5a6473;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.78; /* (32px / 1.8rem) * 100% or 177.778%*/
+}
+
+.hero-cta {
+  min-width: 170px;
+  margin-top: 40px;
+}
+
+.hero-img {
+  position: absolute;
+  right: calc(
+    (100vw - 1110px) / 2 - 100px
+  ); /* (165 - 65 = 100) Cal based on width of content in Figma */
+  bottom: 0;
+}
+
+/* ========== Clients ========== */
+.client {
+  margin-top: 79px;
+  padding: 43px 0 41px;
+}
+
+.client .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.client .desc {
+  color: #7d8589;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25; /* 125% or (20px / 1.6rem) * 100% */
+}
+
+.client .row-desc {
+  margin-top: 23px;
+}
+
+.client .images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 96px;
+}
+
+/* ========== Guides ========== */
+.guides {
+  margin-top: 40px;
+  padding: 93px 0 79px;
+}
+
+.guides .sub-title {
+  position: relative;
+  color: #000339;
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1; /* 100% or (35px / 3.5rem) * 100% */
+}
+
+.guides .sub-title::before {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  display: inline-block;
+  width: 41px;
+  height: 4px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #000339;
+}
+
+.guides .desc {
+  width: 459px;
+  max-width: 100%; /* avoid horizontal scroll appear */
+  margin: 20px auto 0;
+  color: #5a6473;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.88; /* 187.5% or (30px / 1.6rem) * 100% */
+}
+
+.list-guide {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.guide-item {
+  margin: 0 70px;
+  text-align: center; /* img, h3, a will inherited */
+}
+
+.guide-item .title {
+  margin-top: 26px;
+  color: #3b3c45;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.1; /* 110% or (22px / 2 rem) * 100% */
+}
+
+.guide-item .link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0689ff;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.guide-item .arrow {
+  margin-left: 6px;
+}
+
+.guide-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* Affect btn inside .guide-cta ONLY */
+.guide-cta .btn {
+  min-width: 170px;
+}
+
+/* ========== Feature ========== */
+.feature {
+  margin-top: 41px;
+  padding: 110px 0;
+  background: #f5fafe;
+}
+
+.feature .sub-title {
+  color: #000339;
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1; /* 100% */
+}
+
+.feature .row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.feature .desc {
+  color: #5a6473;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.88; /* 187.5% */
+}
+
+.feature .link {
+  display: flex;
+  align-items: center;
+  color: #0689ff;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.feature .link .arrow {
+  margin-left: 8px;
+}
+
+/* father tag */
+.feature .list {
+  display: flex;
+  gap: 30px; /* create gaps among child item */
+  margin-top: 70px;
+}
+
+/* child tag */
+.feature .item {
+  flex: 1; /* dimension width from div .list will divide equally for 3 child div .item */
+  background: #fff;
+  border-radius: 12px;
+}
+
+.feature .list .thumb {
+  width: 100%;
+  height: 227px; /* height dimension got from Figma makes img distort */
+  object-fit: cover; /* object-fit helps keep img in right ratio & lấp đầy khung hình */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.feature .item .body {
+  padding: 17px 20px 24px;
+}
+
+/* Handle in case title has more than 1 line */
+.feature .item .title a {
+  color: #000339;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5; /* increase 1.5 instead of 1 */
+}
+
+.feature .item .desc {
+  margin-top: 11px;
+  color: #a3a6ab;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.5;
+  word-break: break-all; /* control how words are broken when overflow the boundaries of their containing element */
+}
+
+.feature .item .info {
+  display: flex;
+  align-items: center;
+  margin-top: 21px;
+}
+
+.feature .item .icon {
+  margin-left: 23px;
+}
+
+.feature .item .icon:first-child {
+  margin-left: 0;
+}
+
+.feature .item .label {
+  margin-left: 8px;
+  color: #4d4d52;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* ========== Stats ========== */
+.stats {
+  margin-top: 75px;
+  padding: 50px 0;
+}
+
+.stats .row {
+  display: flex;
+}
+
+.stats .content {
+  width: 1048px;
+}
+
+/* Calculate based on the width of whole block of content, don't use fixed px */
+/* (520px / 1048px) * 100% = 50% */
+.stats .img-block,
+.stats .info {
+  width: 50%;
+}
+
+.stats .img-block {
+  position: relative;
+}
+
+.stats .info {
+  padding: 79px 0 0 165px;
+}
+
+/* don't set height for this kind of content, when add more height auto increase */
+.stats .stats-trend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 239px;
+  padding: 45px 22px 40px;
+  border-radius: 0px 0px 12px 12px;
+  background-color: #fff;
+}
+
+.stats-trend .value {
+  color: #000339;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* inherited value flex from class row, so can use margin-left straight away for img tag, otherwise need transfer img tag to display block first  */
+.stats-trend .icon {
+  margin-left: auto; /* push img to the opposite side of left --> right */
+}
+
+.stats-trend .desc {
+  margin-top: 8px;
+  color: #a7a7a7;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.stats-trend .seperate {
+  height: 1.3px;
+  margin-top: 25px;
+  background: #e9e9e9;
+}
+
+.stats .avatar-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 16px;
+  margin-top: 26px;
+}
+
+.stats .avatar-group {
+  display: flex;
+}
+
+.stats .avatar {
+  width: 16px;
+  height: 16px;
+  margin-left: -3px;
+  object-fit: cover;
+  border-radius: 50%;
+  /* For avatar LETTER with default color green */
+  background: var(--bg-color, #73a242);
+  color: #fff;
+  font-size: 0.7rem;
+  line-height: 16px; /* Same height with avatar above*/
+  text-align: center;
+  font-weight: 450;
+  letter-spacing: -0.02rem;
+}
+
+.stats .avatar:first-child {
+  margin-left: 0;
+}
+
+.stats .img-block .image {
+  display: block; /* default of img tag is inline, transform to block to use margin-left */
+  margin-left: auto; /* push img to the opposite side of left --> right */
+  width: 400px;
+  height: 460px;
+  border-radius: 12px;
+  object-fit: cover; /* img will cover to fit the frame */
+}
+
+/* .sub-title & .desc can use fixed width coz father div - .info block was set % width based on stats's content  */
+.stats .sub-title {
+  position: relative;
+  width: 269px;
+  color: #000339;
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1.28; /* 128.571% */
+}
+
+.stats .sub-title::before {
+  position: absolute;
+  left: 0; /* set element stay on the way to the left side */
+  top: -10px;
+  content: "";
+  display: block; /* set block to adjust width, height */
+  width: 41px;
+  height: 4px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #000339;
+}
+
+.stats .info .desc {
+  width: 309px;
+  margin-top: 20px;
+  color: #5a6473;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.88; /* 187.5% */
+}
+
+.stats .row-qty {
+  justify-content: space-between;
+  margin-top: 110px;
+  padding: 0 32px;
+}
+
+.row .qty {
+  color: #000;
+  font-size: 6.4rem;
+  font-weight: 600;
+}
+
+.row .qty-desc {
+  margin-top: 24px;
+  color: #7b8087;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* ========== Subscription ========== */
+.subscription {
+  margin-top: 90px;
+}
+
+.subscription .body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 370px;
+  border-radius: 20px;
+  background: #063183;
+}
+
+.subscription .info {
+  width: 680px;
+  max-width: 100%; /* Handle responsive situation */
+  padding: 0 80px;
+}
+
+.subscription .sub-title {
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.subscription .desc {
+  margin-top: 15px;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.88;
+}
+
+.subscription .btn {
+  min-width: 151px;
+  margin-top: 20px;
+  background: white;
+  color: #002366;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.subscription .image {
+  position: absolute;
+  bottom: 0;
+  right: 221px;
+}
+
+/* ========== Footer ========== */
+.footer {
+  margin-top: 55px;
+  padding: 50px 0 58px;
+}
+
+.footer .row {
+  display: flex;
+}
+
+.footer .row-top {
+  gap: 185px;
+}
+
+.footer .heading {
+  font-family: Lato, sans-serif;
+  color: #1c1c1d;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.footer .list,
+.footer .desc {
+  margin-top: 42px;
+}
+
+.footer .item {
+  margin-bottom: 18px;
+}
+
+.footer .item a,
+.footer .desc {
+  color: #7a7a7e;
+  font-size: 1.6rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.footer .desc {
+  white-space: wrap;
+  line-height: 1.75;
+}
+
+.footer .social {
+  margin-top: 40px;
+}
+
+.footer .social-link {
+  width: 117px;
+  height: 28px;
+}
+
+.footer .row-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 81px;
+}
+
+.footer .row-bottom .copyright {
+  color: #c2c2c2;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: normal;
+}
