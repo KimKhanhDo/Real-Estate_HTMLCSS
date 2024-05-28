@@ -28,6 +28,7 @@ a {
 .content {
   width: 1110px;
   max-width: calc(100% - 48px); /* 24px for each side of webPage */
+  /* Make content stay in middle */
   margin-left: auto;
   margin-right: auto;
 }
