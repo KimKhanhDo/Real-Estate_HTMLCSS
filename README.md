@@ -5,7 +5,7 @@ Welcome to the RealEstate-HTMLCSS project! This project showcases a real estate 
 
 
 ## Project Link
-Check out the project: https://kimkhanhdo.github.io/RealEstate-HTMLCSS/
+Check out the project:  https://kimkhanhdo.github.io/Real-Estate_HtmlCss/
 
 ## Technologies
 
